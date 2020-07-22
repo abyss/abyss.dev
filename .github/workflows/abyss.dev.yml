@@ -1,0 +1,32 @@
+name: abyss.dev-deploy
+on: push
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+
+      - name: Update theme
+        run: git submodule update --init --recursive
+
+      - name: Setup hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "0.74.1"
+          extended: true
+
+      - name: Hugo build
+        run: hugo --minify --environment abyss.dev
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.DEPLOY_ABYSS_DEV }}
+          external_repository: abyss/deploy-abyss.dev
+          publish_dir: ./public
+          # keep_files: true
+          user_name: abyss
+          user_email: abyss@users.noreply.github.com
+          publish_branch: master
+          cname: cwr.io

@@ -1,0 +1,20 @@
+baseurl: "https://cwr.io"
+title: "Craig"
+
+author:
+  name: "Craig"
+
+params:
+  # Default theme "light" or "dark"
+  defaultTheme: "light"
+
+  social:
+    extra:
+      - name: linkedin
+        url: https://www.linkedin.com/in/craig-reeder/
+
+# menu:
+#   extra:
+#     - name: "Resume"
+#       identifier: "resume"
+#       url: ""
