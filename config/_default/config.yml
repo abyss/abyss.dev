@@ -61,11 +61,11 @@ taxonomies:
   tag: "tags"
   series: "series"
 
-# menu:
-#   main:
-#     - name: "Posts"
-#       identifier: "posts"
-#       url: "/posts"
+menu:
+  main:
+    - name: "Posts"
+      identifier: "posts"
+      url: "/posts"
 
 #     - name: "About"
 #       identifier: "about"
