@@ -23,7 +23,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           deploy_key: ${{ secrets.DEPLOY_ABYSS_DEV }}
-          external_repository: abyss/deploy-abyss.dev
+          external_repository: abyss/deployed-abyss.dev
           publish_dir: ./public
           # keep_files: true
           user_name: abyss
