@@ -29,4 +29,4 @@ jobs:
           user_name: abyss
           user_email: abyss@users.noreply.github.com
           publish_branch: master
-          cname: cwr.io
+          cname: abyss.dev
