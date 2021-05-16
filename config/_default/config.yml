@@ -43,15 +43,14 @@ params:
 
   # Social icons
   social:
-    main:
-      - name: twitter
-        url: https://twitter.com/AbyssVI
-      - name: github
-        url: https://github.com/abyss
-      - name: discord
-        url: https://discord.abyss.dev/
-      - name: dev
-        url: https://dev.to/abyss
+    - name: twitter
+      url: https://twitter.com/AbyssVI
+    - name: github
+      url: https://github.com/abyss
+    - name: discord
+      url: https://discord.abyss.dev/
+    - name: dev
+      url: https://dev.to/abyss
 
   logo:
     logoCursorColor: "#aaa"
