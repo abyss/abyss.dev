@@ -3,58 +3,18 @@ baseurl: ""
 title: "Site Title"
 languageCode: "en-us"
 theme: "hello-abyss"
+
+PygmentsCodeFences: true
+PygmentsStyle: "monokai"
+
 paginate: 10
-enableGitInfo: false
+rssLimit: 10
+
 copyright: '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+
 enableRobotsTXT: true
+enableGitInfo: false
 enableEmoji: true
-
-params:
-  dateform: "Jan 2, 2006"
-  dateformShort: "Jan 2"
-  dateformNum: "2006-01-02"
-  dateformNumTime: "2006-01-02 15:04 -0700"
-
-  # Subtitle for Page (HTML) Title
-  # subtitle: "Subtitle"
-
-  # Subtitle for home
-  homeSubtitle: "System Administration // DevOps"
-
-  readOtherPosts: "More posts"
-  disableReadOtherPosts: false
-
-  # Enable sharing buttons, if you like
-  enableSharingButtons: true
-
-  # Metadata mostly used in document's head
-  description: "Thoughts from a System Administrator turned DevOps Enthusiast"
-  keywords: "homepage, blog, devops, system administration, cloud, aws, azure, ansible, terraform, portfolio"
-  images: [""]
-
-  # Canonical baseURL (with no slash) for rel="canonical"
-  canonicalURL: "https://abyss.dev"
-
-  # Default theme "light" or "dark"
-  defaultTheme: "dark"
-
-  # Override the View Source
-  footerSource: "<a href=\"https://github.com/abyss/abyss.dev\">View Source</a>"
-
-  # Social icons
-  social:
-    - name: twitter
-      url: https://twitter.com/AbyssVI
-    - name: github
-      url: https://github.com/abyss
-    - name: discord
-      url: https://discord.abyss.dev/
-    - name: dev
-      url: https://dev.to/abyss
-
-  logo:
-    logoCursorColor: "#aaa"
-    logoHomeLink: "/"
 
 taxonomies:
   tag: "tags"
@@ -72,3 +32,85 @@ menu:
 
 permalinks:
   posts: "/posts/:slug/"
+
+params:
+  dateform: "Jan 2, 2006"
+  dateformShort: "Jan 2"
+  dateformNum: "2006-01-02"
+  dateformNumTime: "2006-01-02 15:04 -0700"
+
+  # Metadata mostly used in document's head
+  #
+  description: "Thoughts from a System Administrator turned DevOps Enthusiast"
+  keywords: "homepage, blog, devops, system administration, cloud, aws, azure, ansible, terraform, portfolio"
+  images: [""]
+
+  # Home subtitle of the index page.
+  #
+  homeSubtitle: "System Administration // DevOps"
+
+  # Set disableReadOtherPosts to true in order to hide the links to other posts.
+  #
+  disableReadOtherPosts: false
+  readOtherPosts: "More posts"
+
+  # Sharing buttons
+  #
+  # There are a lot of buttons preconfigured. If you want to change them,
+  # generate the buttons here: https://sharingbuttons.io
+  # and add them into your own `layouts/partials/sharing-buttons.html`
+  #
+  enableSharingButtons: true
+
+  # Canonical baseURL (with no slash) for rel="canonical"
+  canonicalURL: "https://abyss.dev"
+
+  # Enable theme toggle
+  #
+  # This options enables the theme toggle for the theme.
+  # Per default, this option is off.
+  # The theme is respecting the prefers-color-scheme of the operating systeme.
+  # With this option on, the page user is able to set the scheme he wants.
+  enableThemeToggle: true
+
+  # Default theme "light", "dark", "auto"
+  defaultTheme: "dark"
+
+  # Integrate Javascript files or stylesheets by adding the url to the external assets or by
+  # linking local files with their path relative to the static folder, e.g. "css/styles.css"
+  #
+  customCSS: []
+  customJS: []
+
+  footer:
+    trademark: true
+    rss: true
+    copyright: true
+    author: true
+
+    topText: []
+    bottomText:
+      - "Powered by <a href=\"http://gohugo.io\">Hugo</a>"
+      - "<a href=\"https://github.com/abyss/hugo-theme-hello-abyss/\">Theme</a>"
+      - "<a href=\"https://github.com/abyss/abyss.dev\">View Source</a>"
+
+  # Social icons
+  social:
+    - name: twitter
+      url: https://twitter.com/AbyssVI
+    - name: github
+      url: https://github.com/abyss
+    - name: discord
+      url: https://discord.abyss.dev/
+    - name: dev
+      url: https://dev.to/abyss
+
+  logo:
+    logoHomeLink: "/"
+    logoMark: "$"
+    logoText: "cd /"
+    dynamic: true
+    logoCursorDisabled: false
+    logoCursorColor: "#aaaaaa"
+    # logoCursorAnimate: "1s"
+
