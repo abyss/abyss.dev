@@ -28,5 +28,5 @@ jobs:
           # keep_files: true
           user_name: abyss
           user_email: abyss@users.noreply.github.com
-          publish_branch: master
+          publish_branch: main
           cname: abyss.dev
