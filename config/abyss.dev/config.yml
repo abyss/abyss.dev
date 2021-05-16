@@ -5,5 +5,4 @@ author:
   name: "Abyss"
 
 params:
-  # Default theme "light" or "dark"
   defaultTheme: "dark"

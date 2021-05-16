@@ -1,11 +1,10 @@
 baseurl: "https://cwr.io"
-title: "Craig"
+title: "Craig Reeder"
 
 author:
-  name: "Craig"
+  name: "Craig Reeder"
 
 params:
-  # Default theme "light" or "dark"
   defaultTheme: "light"
 
   social:
@@ -19,9 +18,3 @@ params:
       url: https://dev.to/abyss
     - name: linkedin
       url: https://www.linkedin.com/in/craig-reeder/
-
-# menu:
-#   extra:
-#     - name: "Resume"
-#       identifier: "resume"
-#       url: ""

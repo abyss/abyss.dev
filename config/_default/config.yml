@@ -41,13 +41,13 @@ params:
 
   # Metadata mostly used in document's head
   #
-  description: "Thoughts from a System Administrator turned DevOps Enthusiast"
-  keywords: "homepage, blog, devops, system administration, cloud, aws, azure, ansible, terraform, portfolio"
+  description: "Thoughts from a Cloud Engineer and DevOps Enthusiast"
+  keywords: "homepage, blog, devops, automation, system administration, cloud, aws, ansible, terraform, portfolio"
   images: [""]
 
   # Home subtitle of the index page.
   #
-  homeSubtitle: "System Administration // DevOps"
+  homeSubtitle: "Cloud Engineering | Automation | DevOps"
 
   # Set disableReadOtherPosts to true in order to hide the links to other posts.
   #
