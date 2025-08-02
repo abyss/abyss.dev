@@ -4,26 +4,29 @@ on:
   push: { branches: [ main ] }
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   abyss-dev:
     runs-on: ubuntu-latest
     steps:
       - name: Git checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           submodules: recursive
 
       - name: Setup hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: "0.83.1"
+          hugo-version: "0.148.2"
           extended: true
 
       - name: Hugo Build abyss.dev
         run: hugo --minify --environment abyss.dev
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           deploy_key: ${{ secrets.DEPLOY_ABYSS_DEV }}
           external_repository: abyss/deployed-abyss.dev
@@ -37,21 +40,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Git checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           submodules: recursive
 
       - name: Setup hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: "0.83.1"
+          hugo-version: "0.148.2"
           extended: true
 
       - name: Hugo Build cwr.io
         run: hugo --minify --environment cwr.io
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           deploy_key: ${{ secrets.DEPLOY_CWR_IO }}
           external_repository: abyss/deployed-cwr.io
