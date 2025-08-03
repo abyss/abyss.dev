@@ -7,7 +7,8 @@ theme: "hello-abyss"
 PygmentsCodeFences: true
 PygmentsStyle: "monokai"
 
-paginate: 10
+pagination:
+  pagerSize: 10
 rssLimit: 10
 
 copyright: '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'

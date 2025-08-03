@@ -1,8 +1,7 @@
 baseurl: "https://abyss.dev"
 title: "Abyss"
 
-author:
-  name: "Abyss"
-
 params:
+  author:
+    name: "Abyss"
   defaultTheme: "dark"

@@ -1,10 +1,9 @@
 baseurl: "https://cwr.io"
 title: "Craig Reeder"
 
-author:
-  name: "Craig Reeder"
-
 params:
+  author:
+    name: "Craig Reeder"
   defaultTheme: "light"
 
   social:
