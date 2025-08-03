@@ -7,13 +7,7 @@ params:
   defaultTheme: "light"
 
   social:
-    - name: twitter
-      url: https://twitter.com/AbyssVI
     - name: github
       url: https://github.com/abyss
-    - name: discord
-      url: https://discord.abyss.dev/
-    - name: dev
-      url: https://dev.to/abyss
     - name: linkedin
       url: https://www.linkedin.com/in/craig-reeder/
