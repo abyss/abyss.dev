@@ -63,6 +63,12 @@ params:
   #
   enableSharingButtons: true
 
+  # Reading time
+  #
+  # Enable or disable reading time display on posts
+  #
+  enableReadingTime: true
+
   # Canonical baseURL (with no slash) for rel="canonical"
   canonicalURL: "https://abyss.dev"
 
