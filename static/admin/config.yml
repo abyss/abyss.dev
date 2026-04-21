@@ -1,0 +1,24 @@
+backend:
+  name: github
+  repo: abyss/abyss.dev
+  branch: main
+
+media_folder: static/images
+public_folder: /images
+
+collections:
+  - name: posts
+    label: Posts
+    folder: content/posts
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: Last Modified, name: lastmod, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, required: false }
+      - { label: Draft, name: draft, widget: boolean, default: true }
+      - { label: Table of Contents, name: toc, widget: boolean, default: false, required: false }
+      - { label: Tags, name: tags, widget: list, required: false }
+      - { label: Images, name: images, widget: list, required: false }
+      - { label: Aliases, name: aliases, widget: list, required: false }
+      - { label: Body, name: body, widget: markdown }
