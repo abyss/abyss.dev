@@ -1,0 +1,39 @@
+baseURL         = 'https://abyss.dev/'
+locale          = 'en-us'
+title           = 'Abyss'
+copyright       = '&copy; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+# Rewrites relative URLs to absolute using baseURL — useful for canonical SEO
+canonifyURLs    = false
+enableRobotsTXT = true
+
+[security.http]
+  urls = ['https://cdn.jsdelivr.net/npm/simple-icons@latest/.*']
+
+[outputs]
+  home    = ['HTML', 'RSS']
+  section = ['HTML', 'RSS']
+
+[markup.highlight]
+  noClasses = false
+  lineNos   = false
+  tabWidth  = 2
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[params]
+  defaultTheme = "dark"
+  tagline      = "Cloud Engineering | Automation | DevOps"
+  author       = "Abyss"
+  sourceURL    = "https://github.com/abyss/abyss.dev"
+  description  = "Thoughts from a Cloud Engineer and DevOps Enthusiast"
+  keywords     = "homepage, blog, devops, automation, system administration, cloud, aws, ansible, terraform, portfolio"
+
+  [params.social]
+    github  = "https://github.com/abyss"
+    discord = "https://discord.abyss.dev/"
+
+[[menus.main]]
+  name   = "posts"
+  url    = "/posts/"
+  weight = 1

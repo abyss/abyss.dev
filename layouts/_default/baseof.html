@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+{{ partial "head.html" . }}
+<body class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-200 min-h-screen flex flex-col transition-colors duration-200">
+  {{ partial "header.html" . }}
+  <main class="flex-1 w-full max-w-2xl mx-auto px-4 py-10">
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ partial "footer.html" . }}
+  {{ with resources.Get "js/main.js" | minify | fingerprint }}
+  <script src="{{ .RelPermalink }}" defer></script>
+  {{ end }}
+</body>
+</html>

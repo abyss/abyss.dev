@@ -1,0 +1,53 @@
+version: '3'
+
+tasks:
+  default:
+    cmds:
+      - task --list
+
+  install:
+    desc: Install npm dependencies
+    cmds:
+      - npm install
+
+  update:
+    desc: Update npm dependencies to latest
+    cmds:
+      - npm update
+
+  upgrade:
+    desc: Upgrade npm dependencies to newest major versions
+    cmds:
+      - npx npm-check-updates -u
+      - npm install
+
+  dev:
+    desc: Start Hugo dev server with drafts (abyss.dev)
+    deps: [install]
+    cmds:
+      - hugo server -D --port 8000
+
+  dev:cwr:
+    desc: Start Hugo dev server with drafts (cwr.io)
+    deps: [install]
+    cmds:
+      - hugo server -D --port 8000 -e cwr.io
+
+  build:
+    desc: Build abyss.dev for production
+    deps: [install]
+    cmds:
+      - hugo --minify
+
+  build:cwr:
+    desc: Build cwr.io for production
+    deps: [install]
+    cmds:
+      - hugo --minify -e cwr.io
+
+  clean:
+    aliases: [reset]
+    desc: GC Hugo cache, remove build artifacts and node_modules
+    cmds:
+      - hugo --gc
+      - rm -rf public resources .hugo_build.lock node_modules

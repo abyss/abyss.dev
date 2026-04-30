@@ -1,8 +1,9 @@
 ---
 title: "Hello Hugo"
 date: 2020-07-22
-lastmod: 2021-05-16
+lastmod: 2026-04-30
 draft: false
+description: "How this site came to be - Hugo, a custom theme, and GitHub Pages."
 tags: ["hello", "hugo"]
 aliases: ["/posts/so-it-begins"]
 ---
@@ -27,17 +28,21 @@ However, through some clever tricks using Hugo environments, I am able to build 
 
 This site uses [Hugo](https://gohugo.io/) as a Static Site Generator. If you're not familiar with it, essentially it allows me to write most of the site in Markdown and quickly compile to a static HTML/CSS/JS website. I chose it mostly because of its popularity and ease of use.
 
-For a theme, I started with [hello-friend-ng](https://github.com/rhazdon/hugo-theme-hello-friend-ng) by Djordje Atlialp from the Hugo Theme's site. I picked it primarily because it had a light and dark mode, and had a nice minimalist-geek aesthetic.
+~~For a theme, I started with [hello-friend-ng](https://github.com/rhazdon/hugo-theme-hello-friend-ng) by Djordje Atlialp from the Hugo Theme's site. I picked it primarily because it had a light and dark mode, and had a nice minimalist-geek aesthetic.~~
 
-I wasn't quite fond of every decision made by Djordje, which lead me to customizing the theme more and more. The theme the site now uses is [hello-abyss](https://github.com/abyss/hugo-theme-hello-abyss). More details about the differences can be found in the README on GitHub.
+~~I wasn't quite fond of every decision made by Djordje, which lead me to customizing the theme more and more. The theme the site now uses is [hello-abyss](https://github.com/abyss/hugo-theme-hello-abyss). More details about the differences can be found in the README on GitHub.~~
 
-As mentioned before, I am using Hugo Environments to use different configuration sets (merged with the `_default` configuration) to add different settings for each domain's build.
+~~As mentioned before, I am using Hugo Environments to use different configuration sets (merged with the `_default` configuration) to add different settings for each domain's build.~~
+
+**Update (2026):** The site no longer uses an external theme. It now runs a custom theme built directly into the repository using [Tailwind CSS v4](https://tailwindcss.com/) and the `@tailwindcss/typography` plugin for prose rendering. I appreciate my starting place of [hello-friend-ng](https://github.com/rhazdon/hugo-theme-hello-friend-ng) (and you can see the inspiration), but this way it's more straight forward to maintain.
 
 ### Hosting & CI/CD/CD: GitHub & GitHub Actions
 
-When I push any changes to GitHub, the entire site is rebuilt using GitHub Actions. The sites are then hosted in two repositories that use GitHub Pages to serve.
+~~When I push any changes to GitHub, the entire site is rebuilt using GitHub Actions. The sites are then hosted in two repositories that use GitHub Pages to serve.~~
 
-Primarily, this is all on the back of [@peaceiris' actions-hugo](https://github.com/peaceiris/actions-hugo) and [actions-gh-pages](https://github.com/peaceiris/actions-gh-pages), which are well documented and easy to use.
+~~Primarily, this is all on the back of [@peaceiris' actions-hugo](https://github.com/peaceiris/actions-hugo) and [actions-gh-pages](https://github.com/peaceiris/actions-gh-pages), which are well documented and easy to use.~~
+
+**Update (2026):** The site has since migrated to [Cloudflare Pages](https://pages.cloudflare.com/) for free static hosting. It handles the build and deploy pipeline directly from the GitHub repository, removing the need for custom GitHub Actions workflows.
 
 ### Conclusion
 

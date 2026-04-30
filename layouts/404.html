@@ -1,0 +1,11 @@
+{{ define "main" }}
+<div class="flex flex-col items-center justify-center min-h-[60vh] text-center gap-6">
+  <p class="font-mono text-zinc-400 dark:text-zinc-600 text-sm">exit status 404</p>
+  <h1 class="text-3xl font-bold tracking-tight">No such file or directory</h1>
+  <div class="flex flex-col w-fit gap-1 text-left">
+    <button onclick="history.back()" class="font-mono text-sm text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 border border-zinc-300 dark:border-zinc-700 hover:border-zinc-500 dark:hover:border-zinc-400 transition-colors cursor-pointer text-left px-3 py-1.5"><span class="inline-block w-[13ch]">$ cd ..</span><span class="text-zinc-400 dark:text-zinc-600"># go back</span></button>
+    <a href="/" class="font-mono text-sm text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 border border-zinc-300 dark:border-zinc-700 hover:border-zinc-500 dark:hover:border-zinc-400 transition-colors px-3 py-1.5"><span class="inline-block w-[13ch]">$ cd ~</span><span class="text-zinc-400 dark:text-zinc-600"># go home</span></a>
+    <a href="/posts/" class="font-mono text-sm text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 border border-zinc-300 dark:border-zinc-700 hover:border-zinc-500 dark:hover:border-zinc-400 transition-colors px-3 py-1.5"><span class="inline-block w-[13ch]">$ cd /posts/</span><span class="text-zinc-400 dark:text-zinc-600"># view posts</span></a>
+  </div>
+</div>
+{{ end }}

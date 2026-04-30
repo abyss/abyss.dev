@@ -1,0 +1,45 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if eq .Kind "404" }}404 not found · {{ else if not .IsHome }}{{ .Title }} · {{ end }}{{ .Site.Title }}</title>
+
+  {{/* FOUC prevention: set .dark class before first paint */}}
+  <script>
+  (function(){
+    var stored = localStorage.getItem('theme');
+    var def = '{{ .Site.Params.defaultTheme | default "dark" }}';
+    var theme = stored
+      ? stored
+      : def === 'system'
+        ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+        : def;
+    if (theme === 'dark') document.documentElement.classList.add('dark');
+  })();
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+  {{ with resources.Get "css/main.css" | css.TailwindCSS | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}">
+  {{ end }}
+
+  {{/* RSS autodiscovery */}}
+  {{ range .AlternativeOutputFormats }}
+  <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Site.Title }}">
+  {{ end }}
+
+  {{ $desc := .Params.description | default .Site.Params.description }}
+  {{ with $desc }}<meta name="description" content="{{ . }}">{{ end }}
+  {{ with .Site.Params.keywords }}<meta name="keywords" content="{{ . }}">{{ end }}
+
+  {{/* Open Graph */}}
+  <meta property="og:title" content="{{ if not .IsHome }}{{ .Title }} · {{ end }}{{ .Site.Title }}">
+  <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  {{ with $desc }}<meta property="og:description" content="{{ . }}">{{ end }}
+  {{ with .Params.cover }}<meta property="og:image" content="{{ . | absURL }}">{{ end }}
+</head>

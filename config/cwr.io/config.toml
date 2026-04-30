@@ -1,0 +1,10 @@
+baseURL      = 'https://cwr.io/'
+title        = 'Craig Reeder'
+
+[params]
+  author       = "Craig Reeder"
+  defaultTheme = "light"
+
+  [params.social]
+    github   = "https://github.com/abyss"
+    linkedin = "https://linkedin.com/in/craig-reeder"

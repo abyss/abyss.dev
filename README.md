@@ -1,14 +1,29 @@
 # abyss.dev // cwr.io
 
-This is the source code for two websites, https://abyss.dev and https://cwr.io
+Source code for [https://abyss.dev](https://abyss.dev) and [https://cwr.io](https://cwr.io).
 
-The websites are built using Hugo Extended, with the [hello-abyss](https://github.com/abyss/hugo-theme-hello-abyss) theme, which is based on the [hello-world-ng](https://github.com/rhazdon/hugo-theme-hello-friend-ng) by [Djordje Atlialp](https://github.com/rhazdon).
+Built with [Hugo](https://gohugo.io/) and a custom theme using [Tailwind CSS v4](https://tailwindcss.com/) and [`@tailwindcss/typography`](https://github.com/tailwindlabs/tailwindcss-typography), all contained in this repository.
 
-Both are built using the same content, with different environment configurations (changing some of the site to be depersonalized).
+Both sites share the same content and codebase, with site-specific configuration in `config/cwr.io/` overriding the defaults in `config/_default/`.
 
-Both sites are hosted using GitHub Pages, and are automatically deployed on push using GitHub Actions.
+Hosted on [Cloudflare Pages](https://pages.cloudflare.com/), deployed automatically on push.
+
+## Development
+
+```bash
+task dev        # abyss.dev (http://localhost:8000)
+task dev:cwr    # cwr.io (http://localhost:8000)
+```
+
+## Build
+
+```bash
+task build      # abyss.dev
+task build:cwr  # cwr.io
+```
 
 ## License
-All code is licensed under [The MIT License](https://opensource.org/licenses/MIT).
+
+All code is licensed under the [ISC License](https://opensource.org/licenses/ISC).
 
 All non-code content is licensed [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).

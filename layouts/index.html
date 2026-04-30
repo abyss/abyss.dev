@@ -1,0 +1,26 @@
+{{ define "main" }}
+<div class="flex flex-col items-center justify-center min-h-[60vh] text-center gap-6">
+  <h1 class="text-5xl font-bold tracking-tight">{{ .Site.Title }}</h1>
+
+  {{ with .Site.Params.tagline }}
+  <p class="text-zinc-600 dark:text-zinc-400 text-xl">{{ . }}</p>
+  {{ end }}
+
+  {{ with .Site.Params.social }}
+  <div class="flex gap-5 text-zinc-500">
+    {{ range $slug, $url := . }}
+    {{ if $url }}
+    {{ $iconURL := printf "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/%s.svg" $slug }}
+    {{ with resources.GetRemote $iconURL }}
+      {{ $svg := .Content | safeHTML }}
+      <a href="{{ $url }}" target="_blank" rel="noopener" aria-label="{{ $slug | title }}"
+         class="hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors [&_svg]:w-5 [&_svg]:h-5 [&_svg]:fill-current">
+        {{ $svg }}
+      </a>
+    {{ end }}
+    {{ end }}
+    {{ end }}
+  </div>
+  {{ end }}
+</div>
+{{ end }}

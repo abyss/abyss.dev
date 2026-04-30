@@ -1,0 +1,20 @@
+{{ if or .PrevInSection .NextInSection }}
+<nav class="flex justify-between gap-4 mt-16 pt-6 border-t border-zinc-200 dark:border-zinc-800 text-sm" aria-label="Post navigation">
+  <div class="flex-1">
+    {{ with .PrevInSection }}
+    <a href="{{ .RelPermalink }}" class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
+      <span class="block text-xs font-mono text-zinc-400 dark:text-zinc-600 mb-1">← previous</span>
+      {{ .Title }}
+    </a>
+    {{ end }}
+  </div>
+  <div class="flex-1 text-right">
+    {{ with .NextInSection }}
+    <a href="{{ .RelPermalink }}" class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
+      <span class="block text-xs font-mono text-zinc-400 dark:text-zinc-600 mb-1">next →</span>
+      {{ .Title }}
+    </a>
+    {{ end }}
+  </div>
+</nav>
+{{ end }}

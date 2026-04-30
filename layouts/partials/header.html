@@ -1,0 +1,69 @@
+{{ $path := "/" }}
+{{ if and (not .IsHome) (ne .Kind "404") }}
+  {{ $parts := split (strings.TrimPrefix "/" .RelPermalink) "/" }}
+  {{ $path = printf "/%s/" (index $parts 0) }}
+{{ end }}
+
+<header class="sticky top-0 z-10 border-b border-zinc-200 bg-zinc-100/95 dark:border-zinc-800 dark:bg-zinc-950/95 backdrop-blur-sm">
+  <div class="max-w-2xl mx-auto px-4 h-12 flex items-center justify-between">
+
+    {{/* Logo */}}
+    <a href="/" class="font-mono text-base text-zinc-700 dark:text-zinc-200 no-underline hover:text-zinc-900 dark:hover:text-white transition-colors" aria-label="Home">
+      {{ if eq .Kind "404" }}$ pwd <span class="text-zinc-400 dark:text-zinc-600"># 404 not found</span>{{ else }}$ cd {{ $path }}<span class="cursor" aria-hidden="true"></span>{{ end }}
+    </a>
+
+    <div class="flex items-center gap-4">
+      {{/* Desktop nav */}}
+      <nav class="hidden md:flex gap-5 text-base" aria-label="Main navigation">
+        {{ range .Site.Menus.main }}
+        <a href="{{ .URL }}"
+           class="transition-colors {{ if strings.HasPrefix $.Page.RelPermalink .URL }}text-zinc-900 dark:text-zinc-100{{ else }}text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100{{ end }}">
+          {{ .Name }}
+        </a>
+        {{ end }}
+      </nav>
+
+      {{/* Theme toggle */}}
+      <button id="theme-toggle" aria-label="Toggle theme"
+              class="text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors cursor-pointer">
+        {{/* Sun — shown when dark mode is active */}}
+        <svg class="icon-sun w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+        </svg>
+        {{/* Moon — shown when light mode is active */}}
+        <svg class="icon-moon w-4 h-4 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+
+      {{/* Hamburger — mobile only */}}
+      <button id="hamburger" class="md:hidden text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors cursor-pointer rounded p-1"
+              aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6"  x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  {{/* Mobile nav drawer */}}
+  <nav id="mobile-nav"
+       class="overflow-hidden flex flex-col gap-3 text-sm border-zinc-200 dark:border-zinc-800"
+       style="max-height:0; opacity:0; transition:max-height .3s ease, opacity .25s ease, padding .3s ease"
+       aria-label="Mobile navigation">
+    <div class="border-t border-zinc-200 dark:border-zinc-800 px-4 pt-3 pb-4 flex flex-col gap-3">
+      {{ range .Site.Menus.main }}
+      <a href="{{ .URL }}"
+         class="block transition-colors {{ if strings.HasPrefix $.Page.RelPermalink .URL }}text-zinc-900 dark:text-zinc-100{{ else }}text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100{{ end }}">
+        {{ .Name }}
+      </a>
+      {{ end }}
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,19 @@
+{{ define "main" }}
+<section>
+  <h1 class="text-xl font-bold mb-8 capitalize">{{ .Title }}</h1>
+  <ul class="space-y-2 list-none p-0">
+    {{ range .RegularPages }}
+    <li class="flex items-baseline justify-between gap-4">
+      <a href="{{ .RelPermalink }}"
+         class="text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors no-underline">
+        {{ .Title }}
+      </a>
+      <time datetime="{{ .Date.Format "2006-01-02" }}"
+            class="shrink-0 text-xs font-mono text-zinc-400 dark:text-zinc-600">
+        {{ .Date.Format "Jan 02, 2006" }}
+      </time>
+    </li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}
