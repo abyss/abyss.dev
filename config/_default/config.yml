@@ -1,7 +1,7 @@
 ---
 baseurl: ""
 title: "Site Title"
-languageCode: "en-us"
+locale: "en-us"
 theme: "hello-abyss"
 
 PygmentsCodeFences: true
