@@ -1,0 +1,24 @@
+{{ define "main" }}
+<section>
+  <ul class="space-y-6 list-none p-0">
+    {{ range .RegularPages.ByWeight }}
+    <li class="flex items-start justify-between gap-6">
+      <div class="min-w-0">
+        <a href="{{ .Params.slides }}" target="_blank" rel="noopener"
+           class="text-zinc-800 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white transition-colors no-underline font-medium">
+          {{ .Title }}
+        </a>
+        <div class="mt-1 space-y-0.5 text-sm">
+          {{ with .Params.event }}<span class="text-zinc-500 dark:text-zinc-500">{{ . }}</span>{{ end }}
+          {{ with .Params.description }}<p class="text-zinc-400 dark:text-zinc-600">{{ . }}</p>{{ end }}
+        </div>
+      </div>
+      <time datetime="{{ .Date.Format "2006-01-02" }}"
+            class="shrink-0 text-sm font-mono text-zinc-400 dark:text-zinc-600 mt-0.5">
+        {{ .Date.Format "Jan 2006" }}
+      </time>
+    </li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}

@@ -8,3 +8,13 @@ title        = 'Craig Reeder'
   [params.social]
     github   = "https://github.com/abyss"
     linkedin = "https://linkedin.com/in/craig-reeder"
+
+[[menus.main]]
+  name   = "posts"
+  url    = "/posts/"
+  weight = 1
+
+[[menus.main]]
+  name   = "talks"
+  url    = "/talks/"
+  weight = 2
