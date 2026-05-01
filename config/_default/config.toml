@@ -1,8 +1,7 @@
 baseURL         = 'https://abyss.dev/'
 locale          = 'en-us'
-title           = 'Abyss'
+title           = 'Craig Reeder'
 copyright       = '&copy; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
-# Rewrites relative URLs to absolute using baseURL — useful for canonical SEO
 canonifyURLs    = false
 enableRobotsTXT = true
 
@@ -22,18 +21,25 @@ enableRobotsTXT = true
   unsafe = true
 
 [params]
-  defaultTheme = "dark"
-  tagline      = "Cloud Engineering | Automation | DevOps"
-  author       = "Abyss"
-  sourceURL    = "https://github.com/abyss/abyss.dev"
-  description  = "Thoughts from a Cloud Engineer and DevOps Enthusiast"
-  keywords     = "homepage, blog, devops, automation, system administration, cloud, aws, ansible, terraform, portfolio"
+  defaultTheme  = "dark"
+  canonicalBase = "https://abyss.dev"
+  tagline       = "Cloud Engineering | Automation | DevOps"
+  author        = "Craig Reeder"
+  sourceURL     = "https://github.com/abyss/abyss.dev"
+  description   = "Thoughts from a Cloud Engineer and DevOps Enthusiast"
+  keywords      = "homepage, blog, devops, automation, system administration, cloud, aws, ansible, terraform, opentofu, portfolio"
 
   [params.social]
-    github  = "https://github.com/abyss"
-    discord = "https://discord.abyss.dev/"
+    github   = "https://github.com/abyss"
+    discord  = "https://discord.abyss.dev/"
+    linkedin = "https://linkedin.com/in/craig-reeder"
 
 [[menus.main]]
   name   = "posts"
   url    = "/posts/"
   weight = 1
+
+[[menus.main]]
+  name   = "talks"
+  url    = "/talks/"
+  weight = 2
