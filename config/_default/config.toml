@@ -29,10 +29,21 @@ enableRobotsTXT = true
   description   = "Thoughts from a Cloud Engineer and DevOps Enthusiast"
   keywords      = "homepage, blog, devops, automation, system administration, cloud, aws, ansible, terraform, opentofu, portfolio"
 
-  [params.social]
-    github   = "https://github.com/abyss"
-    discord  = "https://discord.abyss.dev/"
-    linkedin = "https://linkedin.com/in/craig-reeder"
+  [[params.social]]
+    icon = "linkedin"
+    url  = "https://linkedin.com/in/craig-reeder"
+
+  [[params.social]]
+    icon = "github"
+    url  = "https://github.com/abyss"
+
+  [[params.social]]
+    icon = "refinedgithub"
+    url  = "https://github.com/creeder-uturn"
+
+  [[params.social]]
+    icon = "discord"
+    url  = "https://discord.abyss.dev/"
 
 [[menus.main]]
   name   = "posts"

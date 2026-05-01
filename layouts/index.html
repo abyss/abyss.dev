@@ -8,16 +8,14 @@
 
   {{ with .Site.Params.social }}
   <div class="flex gap-5 text-zinc-500">
-    {{ range $slug, $url := . }}
-    {{ if $url }}
-    {{ $iconURL := printf "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/%s.svg" $slug }}
+    {{ range . }}
+    {{ $item := . }}
+    {{ $iconURL := printf "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/%s.svg" $item.icon }}
     {{ with resources.GetRemote $iconURL }}
-      {{ $svg := .Content | safeHTML }}
-      <a href="{{ $url }}" target="_blank" rel="noopener" aria-label="{{ $slug | title }}"
+      <a href="{{ $item.url }}" target="_blank" rel="noopener" aria-label="{{ $item.icon | title }}"
          class="hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors [&_svg]:w-5 [&_svg]:h-5 [&_svg]:fill-current">
-        {{ $svg }}
+        {{ .Content | safeHTML }}
       </a>
-    {{ end }}
     {{ end }}
     {{ end }}
   </div>
