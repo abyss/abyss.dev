@@ -5,6 +5,9 @@ copyright       = '&copy; <a href="https://creativecommons.org/licenses/by-nc/4.
 canonifyURLs    = false
 enableRobotsTXT = true
 
+[security.exec]
+  allow = ['^node$', '^tailwindcss$']
+
 [security.http]
   urls = ['https://cdn.jsdelivr.net/npm/simple-icons@latest/.*']
 
