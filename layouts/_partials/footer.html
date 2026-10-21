@@ -11,8 +11,7 @@
       <span>{{ . | safeHTML }}</span>
       {{ end }}
       <span aria-hidden="true">·</span>
-      {{ $rssIcon := resources.GetRemote "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/rss.svg" }}
-      {{ with $rssIcon }}
+      {{ with resources.Get "icons/rss.svg" }}
       <a href="{{ "posts/index.xml" | relURL }}" aria-label="RSS feed"
          class="hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors [&_svg]:w-4 [&_svg]:h-4 [&_svg]:fill-current">
         {{ .Content | safeHTML }}

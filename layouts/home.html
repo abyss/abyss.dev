@@ -10,8 +10,7 @@
   <div class="flex gap-5 text-zinc-500">
     {{ range . }}
     {{ $item := . }}
-    {{ $iconURL := printf "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/%s.svg" $item.icon }}
-    {{ with resources.GetRemote $iconURL }}
+    {{ with resources.Get (printf "icons/%s.svg" $item.icon) }}
       <a href="{{ $item.url }}" target="_blank" rel="noopener" aria-label="{{ $item.icon | title }}"
          class="hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors [&_svg]:w-5 [&_svg]:h-5 [&_svg]:fill-current">
         {{ .Content | safeHTML }}

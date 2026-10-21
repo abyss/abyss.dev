@@ -8,9 +8,6 @@ enableRobotsTXT = true
 [security.exec]
   allow = ['^node$', '^tailwindcss$']
 
-[security.http]
-  urls = ['https://cdn.jsdelivr.net/npm/simple-icons@latest/.*']
-
 [outputs]
   home    = ['HTML', 'RSS']
   section = ['HTML', 'RSS']

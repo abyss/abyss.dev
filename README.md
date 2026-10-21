@@ -22,6 +22,18 @@ task build      # abyss.dev
 task build:cwr  # cwr.io
 ```
 
+## Icons
+
+Icons are [Simple Icons](https://simpleicons.org/) SVGs (CC0) in `assets/icons/`, read at build time with `resources.Get`.
+
+To add one, download it by slug and reference the slug as `icon` in a `[[params.social]]` entry in `config/_default/config.toml`:
+
+```bash
+curl -fo assets/icons/<slug>.svg https://cdn.jsdelivr.net/npm/simple-icons@16.35.0/icons/<slug>.svg
+```
+
+A missing file drops the link silently. `linkedin.svg` comes from `simple-icons@13.21.0` because later versions removed it.
+
 ## License
 
 All code is licensed under the [ISC License](https://opensource.org/licenses/ISC).
