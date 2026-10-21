@@ -34,6 +34,12 @@ curl -fo assets/icons/<slug>.svg https://cdn.jsdelivr.net/npm/simple-icons@16.35
 
 A missing file drops the link silently. `linkedin.svg` comes from `simple-icons@13.21.0` because later versions removed it.
 
+## Code blocks and callouts
+
+Code blocks use the Chroma `onedark` style (`hugo gen chromastyles --style=onedark > assets/css/syntax.css`). Tag each fence with a language so it gets highlighted.
+
+Callouts use Hugo's alert syntax, for example `> [!NOTE]` on the first line of a blockquote. Types are `NOTE`, `TIP`, `IMPORTANT`, `WARNING`, and `CAUTION`.
+
 ## License
 
 All code is licensed under the [ISC License](https://opensource.org/licenses/ISC).
