@@ -1,0 +1,15 @@
+{{- if eq .Type "alert" -}}
+  {{- $styles := dict
+    "note"      "border-sky-500 bg-sky-50 text-sky-900 dark:bg-sky-950/40 dark:text-sky-100"
+    "tip"       "border-emerald-500 bg-emerald-50 text-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-100"
+    "important" "border-violet-500 bg-violet-50 text-violet-900 dark:bg-violet-950/40 dark:text-violet-100"
+    "warning"   "border-amber-500 bg-amber-50 text-amber-900 dark:bg-amber-950/40 dark:text-amber-100"
+    "caution"   "border-red-500 bg-red-50 text-red-900 dark:bg-red-950/40 dark:text-red-100"
+  -}}
+<div class="not-prose my-6 rounded-r border-l-4 px-4 py-3 text-base leading-relaxed {{ index $styles .AlertType }}" role="note">
+  <p class="mb-1 font-semibold">{{ with .AlertTitle }}{{ . }}{{ else }}{{ .AlertType | title }}{{ end }}</p>
+  <div class="[&_p]:my-0 [&_p:not(:first-child)]:mt-2 [&_code]:rounded [&_code]:bg-black/5 [&_code]:px-1 dark:[&_code]:bg-white/10">{{ .Text }}</div>
+</div>
+{{- else -}}
+<blockquote>{{ .Text }}</blockquote>
+{{- end -}}
